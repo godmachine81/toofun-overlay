@@ -1,0 +1,22 @@
+dev-vcs/git
+>app-shells/bash-3.1 sys-apps/ed dev-util/dialog app-portage/portage-utils app-portage/gentoolkit net-misc/curl
+0
+
+
+http://weaver.gentooexperimental.org/update.html
+CCPL-Attribution-ShareAlike-NonCommercial-2.5
+A most excellent portage wrapper
+~x86 ~amd64
+git-2
+
+
+
+
+
+
+install unpack
+
+
+
+
+

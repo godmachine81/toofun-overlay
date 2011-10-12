@@ -1,0 +1,14 @@
+diff --git a/DEPS b/DEPS
+index 79533f7..bcba4c3 100644
+--- a/src/DEPS
++++ b/src/DEPS
+@@ -417,9 +417,4 @@ hooks = [
+              Var("nacl_toolchain_linux_x86_newlib_hash"),
+     ],
+   },
+-  {
+-    # A change to a .gyp, .gypi, or to GYP itself should run the generator.
+-    "pattern": ".",
+-    "action": ["python", "src/build/gyp_chromium"],
+-  },
+ ]

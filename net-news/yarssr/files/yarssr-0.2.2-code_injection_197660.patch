@@ -1,0 +1,22 @@
+diff -urNad yarssr-0.2.2~/lib/Yarssr/GUI.pm yarssr-0.2.2/lib/Yarssr/GUI.pm
+--- yarssr-0.2.2~/lib/Yarssr/GUI.pm	2007-10-31 12:40:08.000000000 +0100
++++ yarssr-0.2.2/lib/Yarssr/GUI.pm	2007-10-31 12:42:17.958217449 +0100
+@@ -162,9 +162,15 @@
+ 			);
+ 		}
+ 		else {
+-			my $b = Yarssr::Config->get_browser;
+-			$b .= " \"$url\"" unless $b =~ s/\%s/"$url"/;
+-			exec($b) or warn "unable to launch browser\n";
++			my @b = split(' ', Yarssr::Config->get_browser);
++			if (grep(/\%s/, @b))
++			{
++				map {grep(s/\%s/$url/, $_) => $_} @b;
++			}
++			else {
++				push(@b, $url);
++			}
++			exec(@b) or warn "unable to launch browser\n";
+ 			exit;
+ 		}
+ 	}

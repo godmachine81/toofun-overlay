@@ -1,0 +1,30 @@
+From abf3afc0d7232b31c4ddd2a8193d8889510b5eea Mon Sep 17 00:00:00 2001
+From: Mike Gilbert <floppymaster@gmail.com>
+Date: Thu, 21 Jul 2011 20:47:32 -0400
+Subject: [PATCH] Include expat.h using relative path
+
+This enables use of the system header file on Linux, where the system
+expat shard library is linked.
+
+BUG=none
+TEST=Remove third_party/expat/files/lib/*.h and compile on linux
+---
+ chrome/browser/autofill/autofill_xml_parser.h |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/chrome/browser/autofill/autofill_xml_parser.h b/chrome/browser/autofill/autofill_xml_parser.h
+index f25e31a..def0cd4 100644
+--- a/chrome/browser/autofill/autofill_xml_parser.h
++++ b/chrome/browser/autofill/autofill_xml_parser.h
+@@ -12,7 +12,7 @@
+ #include "base/basictypes.h"
+ #include "chrome/browser/autofill/field_types.h"
+ #include "chrome/browser/autofill/form_structure.h"
+-#include "third_party/expat/files/lib/expat.h"
++#include "expat.h"
+ #include "third_party/libjingle/source/talk/xmllite/xmlparser.h"
+ 
+ // The base class that contains common functionality between
+-- 
+1.7.3.4
+
