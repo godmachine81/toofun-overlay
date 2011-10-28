@@ -1,9 +1,0 @@
-# Copyright 1999-2010 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v2
-# $Header: /home/menelkir/portage/app-admin/webmin/Changelog,v 1.1 2010/05/31 10:29:49 menelkir Exp $
-
-*webmin-1.510 (31 May 2010)
-
-  31 May 2010; Daniel Oliveira <menelkir@itroll.org> +webmin-1.510.ebuild:
-  Bump (unmaintained by official tree)
-

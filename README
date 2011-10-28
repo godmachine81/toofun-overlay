@@ -1,7 +1,0 @@
-This is my personal Gentoo/Funtoo Portage Overlay, the files contained within are mostly for my personal 
-use, but I am making them available to the public for testing. I am not responsible for how you use these 
-ebuilds, please do so with caution and know that some ebuilds may not work with your system. As a matter 
-of fact some ebuilds in my local overlay have been masked due to changes in upstream fixing prior issues 
-that required the custom ebuilds. By using this overlay you agree that I will not be responsible for 
-ebuilds that are provided here breaking your system, If you know what you are doing feel free to 
-continue, if not please don't attempt to use this overlay :)  

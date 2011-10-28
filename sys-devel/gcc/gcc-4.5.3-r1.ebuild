@@ -1,9 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc/gcc-4.5.3-r1.ebuild,v 1.5 2011/09/26 17:38:49 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc/gcc-4.4.5.ebuild,v 1.1 2010/10/17 11:54:40 dirtyepic Exp $
 
 PATCH_VER="1.0"
 UCLIBC_VER="1.0"
+
+ETYPE="gcc-compiler"
 
 # Hardened gcc 4 stuff
 PIE_VER="0.4.5"
@@ -22,20 +24,19 @@ inherit toolchain
 DESCRIPTION="The GNU Compiler Collection"
 
 LICENSE="GPL-3 LGPL-3 || ( GPL-3 libgcc libstdc++ gcc-runtime-library-exception-3.1 ) FDL-1.2"
-KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~m68k ~mips ppc ppc64 ~s390 ~sh ~sparc x86 ~x86-fbsd"
+KEYWORDS="*"
+
 IUSE=""
 
 RDEPEND=">=sys-libs/zlib-1.1.4
 	>=sys-devel/gcc-config-1.4
 	virtual/libiconv
-	>=dev-libs/gmp-4.3.2
-	>=dev-libs/mpfr-2.4.2
-	>=dev-libs/mpc-0.8.1
+	>=dev-libs/gmp-4.2.1
+	>=dev-libs/mpfr-2.3.2
 	graphite? (
 		>=dev-libs/ppl-0.10
-		>=dev-libs/cloog-ppl-0.15.8
+		>=dev-libs/cloog-ppl-0.15.4
 	)
-	lto? ( || ( >=dev-libs/elfutils-0.143 dev-libs/libelf ) )
 	!build? (
 		gcj? (
 			gtk? (
@@ -44,7 +45,7 @@ RDEPEND=">=sys-libs/zlib-1.1.4
 				x11-libs/libXtst
 				x11-proto/xproto
 				x11-proto/xextproto
-				=x11-libs/gtk+-2*
+				>=x11-libs/gtk+-2.2
 				x11-libs/pango
 			)
 			>=media-libs/libart_lgpl-2.1
@@ -69,22 +70,20 @@ if [[ ${CATEGORY} != cross-* ]] ; then
 fi
 
 src_unpack() {
-	toolchain_src_unpack
-
+	gcc_src_unpack
 	use vanilla && return 0
 
 	sed -i 's/use_fixproto=yes/:/' gcc/config.gcc #PR33200
 
 	[[ ${CHOST} == ${CTARGET} ]] && epatch "${FILESDIR}"/gcc-spec-env.patch
+	[[ ${CTARGET} == *-softfloat-* ]] && epatch "${FILESDIR}"/4.4.0/gcc-4.4.0-softfloat.patch
 }
 
 pkg_setup() {
-	toolchain_pkg_setup
+	gcc_pkg_setup
 
-	if use lto ; then
-		ewarn
-		ewarn "LTO support is still experimental and unstable."
-		ewarn "Any bugs resulting from the use of LTO will not be fixed."
-		ewarn
+	if use graphite ; then
+		ewarn "Graphite support is still experimental and unstable."
+		ewarn "Any bugs resulting from the use of Graphite will not be fixed."
 	fi
 }
