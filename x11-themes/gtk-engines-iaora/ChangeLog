@@ -1,0 +1,25 @@
+# ChangeLog for x11-themes/gtk-engines-iaora
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  03 Jul 2011; Piotr Szymaniak <szarpaj@grubelek.pl>
+  gtk-engines-iaora-1.0.20.ebuild:
+  EAPI bump, added missing depend.
+
+  09 Jan 2009; Pacho Ramos (pacho) <pacho@condmat1.ciencias.uniovi.es>
+  -gtk-engines-iaora-1.0.11.ebuild, +gtk-engines-iaora-1.0.20.ebuild:
+  Version bump
+
+  29 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  gtk-engines-iaora-1.0.11.ebuild:
+  Add IUSE
+
+  26 Oct 2007; Charlie Shepherd <masterdriverz@gentoo.org>
+  gtk-engines-iaora-1.0.11.ebuild:
+  Various style fixes: Don't install COPYING, quote WORKDIR and remove an
+  extra blank line.
+
+  12 Apr 2007; Pacho Ramos (pacho) <pacho@condmat1.ciencias.uniovi.es>
+  +gtk-engines-iaora-1.0.11.ebuild, +metadata.xml:
+  New ebuild for bug 170321
+

@@ -1,0 +1,1 @@
+-march=native -fno-builtin -msse4a -O2

@@ -1,0 +1,7 @@
+dir /etc
+obj /etc/warning 0fa8bd9c85879f9534ae8d3847e314e1 1318881683
+dir /usr
+dir /usr/sbin
+obj /usr/sbin/update f720588dff9147ea446e12caa088a4a6 1318881683
+dir /usr/lib64
+obj /usr/lib64/libIgli dd01eeeee4ed549a2dca93aa3fc18bdc 1318881683
