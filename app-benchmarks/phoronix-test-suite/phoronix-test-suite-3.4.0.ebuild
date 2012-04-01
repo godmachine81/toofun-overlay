@@ -19,7 +19,7 @@ DEPEND=""
 
 # php 5.3 doesn't have pcre and reflection useflags anymore
 RDEPEND="dev-lang/php:5.3[cli,curl,gd,posix,pcntl,truetype,zip]
-	dev-php5/pecl-ps"
+	dev-php/pecl-ps"
 
 S="${WORKDIR}/${PN}"
 
